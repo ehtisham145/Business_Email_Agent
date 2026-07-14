@@ -8,3 +8,19 @@ touch .env .gitignore README.md
 
 Pycog2-binary is a library which is used for operating as postgress sql driver 
 means if we want to run postgress we use postgress sql
+
+__pycache__/: An automatic folder where Python stores pre-compiled code to make
+ your scripts run faster. So next time when you will run your code the scripts
+ does not take so much time to load faster.
+ 
+docker-compose up -d  This command will install all the software present in 
+docker-compose.yml file in short we can say that for downloading all the files
+of our software from internet we use this command
+
+docker ps   This command gives us the status of docker container
+
+docker-compose start  This command start the docker container
+
+docker-compose stop  This command stop the docker container
+
+docker-compose down -v  This command delete all the previous volume and create new operating

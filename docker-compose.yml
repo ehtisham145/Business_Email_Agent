@@ -1,0 +1,33 @@
+# It is a file which tells docker how many types of software are present
+# on your computer which are known as container in the language of docker
+# you dont need to install or download any thing manually
+services:
+ # The list of software which you want to run 
+  postgres:
+    image: postgres:16 # we are using postgres software version 16
+    container_name: outreach_postgres # The name of software
+    restart: always # if due to any reason software goes off then docker will 
+# restart it automatically
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: email_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+#The Second Service we will use is Redis
+  redis:
+    image: redis:7 # Here we are asking docker to ready the version 7 of redis 
+    container_name: email_db_cache
+    restart: always
+    ports:
+      - "6379:6379"
+
+volumes:
+    postgres_data:
+
+
+# Every Thing Ok
+
