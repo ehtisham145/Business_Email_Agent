@@ -1,6 +1,2 @@
-def main():
-    print("Hello from email-agent!")
-
-
-if __name__ == "__main__":
-    main()
+from app.core.config import settings
+print(settings.DATABASE_URL)

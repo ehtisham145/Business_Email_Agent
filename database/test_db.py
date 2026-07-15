@@ -1,8 +1,7 @@
+from app.core.database import engine
 try:
-    import psycopg2
-    psycopg2.connect('postgresql://admin:admin@localhost:5432/email_db')
-    print('Connected!')
-
-except Exception as e :
-    print("Connection Failed !")
-    print(f"\nError : {e}")
+    conn = engine.connect(); 
+    print('DB Engine Connected!')
+    conn.close()
+except Exception as e:
+    print(f"An Error Occur while Connecting with Database : {e}")
